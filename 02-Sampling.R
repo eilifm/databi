@@ -11,10 +11,12 @@
 # do not be alarmed if R restarts a couple times. 
 # install.packages("tigerstats")
 # install.packages('pastecs')
+# install.packages('nortest')
 
 #########################################################
 library(tigerstats)
 library(pastecs)
+library(nortest)
 
 # As we are plotting the normal distribution, 
 # you may find this additional resource useful, 
@@ -32,14 +34,23 @@ stat.desc(some_numbers)
 # deviations.
 x <- seq(-10, 10, length=100)
 hx <- dnorm(x, mean = 0, sd = 1)
-hx1 <- dnorm(x, mean = 0, sd = 1.5)
-hx2 <- dnorm(x, mean = 0, sd = 2)
-plot(x, hx)
-lines(x, hx1)
-lines(x, hx2)
+plot(x, hx, type = 'l')
+for (i in seq(1, 3.5, by = .1)) {
+  hx1 <- dnorm(x, mean = 0, sd = i)  
+  lines(x, hx1)
+}
+
+# Let's draw some numbers from a random distribution and 
+# plot their histogram.
+
+normal_numbers = rnorm(mean = 20, sd = 2, n = 1000)
+hist(normal_numbers)
 
 # CDF and PDF of Normal Distribution
 pnormGC(20, mean=15, sd=6, region="above",graph=TRUE)
+
+# This will be discussed in greater detail in the 
+# continuous probability module later.
 
 
 ######## Additional Distributions #######################
@@ -47,8 +58,12 @@ pnormGC(20, mean=15, sd=6, region="above",graph=TRUE)
 ?dexp
 x <- seq(0, 4, length=100)
 # Generate random numbers in the distribution
-hx <- dexp(x, rate=.8)
-plot(x, hx)
+hx <- dexp(x, rate=.7)
+plot(x, hx, type = 'l')
+for (i in seq(.4, .7, by = .05)) {
+  hx1 <- dexp(x, rate=i)  
+  lines(x, hx1)
+  }
 
 
 

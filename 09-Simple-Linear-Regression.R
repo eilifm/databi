@@ -34,5 +34,3 @@ lm1 = lm(y ~ x)
 summary(lm1)
 plot(x,y)
 abline(lm1, col="blue", lwd=3)
-
-pairs(cmt, lower.panel = NULL)

@@ -56,8 +56,15 @@ t.test(ab$Diameter, y=NULL, mu=.5, var.equal=TRUE, alternative="greater")
 # We will examine wether or not the two sexes of
 # Abalone have the same mean whole weight
 
+# To make things simpler here we will create a subset of the original
+# data.frame containing the male and female samples. We will also select only
+# the first 500 rows to equalize the sample size.
 
+mf_data = ab[ which(ab$Sex == 'M' | ab$Sex == 'F'), ][1:500,]
 
-t.test(Risk~Smoker,data=thedata, var.equal=TRUE)
+t.test(mf_data$Whole.weight ~ mf_data$Sex, var.equal=FALSE)
+
+# Reject the null and can conclude that the difference in mean
+# Whole.weight between male and female abalone is not zero. 
 
 

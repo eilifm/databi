@@ -77,7 +77,6 @@ sd(df$Shucked.weight, na.rm=TRUE)
 
 # Coefficient of variation
 # Standard Deviation/ Mean
-
 sd(df$Shucked.weight, na.rm=TRUE)/mean(df$Shucked.weight, na.rm=TRUE)
 
 ## Z Scores
@@ -89,4 +88,12 @@ pop_sd = sd(df$Shucked.weight)
 # Let's access the Shucked.weight value for the first row of the data. 
 z = (df$Shucked.weight[1] - pop_mean) / pop_sd
 
+# Covariance
+# Covariance between Shucked.weight and Whole.weight
+cov(ab$Shucked.weight, ab$Whole.weight)
+
+# Correlation Coefficient
+cor(ab$Shucked.weight, ab$Whole.weight)
+# We see here that the correlation is nearly 1 indicating that they are 
+# very correlated to eachother. This may be an issue later on. 
 

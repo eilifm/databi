@@ -48,4 +48,3 @@ unfair_cnt_H = sum(unfair_samples == "H")
 unfair_cnt_H
 unfair_cnt_T
 
-## Knowing your odds -- Binomial Distribution

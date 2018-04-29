@@ -24,5 +24,10 @@ boxplot(Whole.weight ~ Sex, data=ab, ylab="Whole Weight", xlab="Sex")
 # ANOVA, or Analysis of Variance is a method to conclude wether
 # variation in data can be attributed to a specific factor. 
 # It is a precursor to linear regression.
-fit <- aov(Whole.weight ~ Sex, data = ab)
-summary(fit)
+fit1 <- aov(Whole.weight ~ Sex, data = ab)
+summary(fit1)
+
+# ANOVA can invlude as many variables as you like. 
+# Let's try with two. 
+fit2 <- aov(Whole.weight ~ Sex + Length, data = ab)
+summary(fit2)
