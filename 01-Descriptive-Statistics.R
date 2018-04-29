@@ -5,6 +5,7 @@
 # https://archive.ics.uci.edu/ml/datasets/Concrete+Compressive+Strength
 # https://archive.ics.uci.edu/ml/datasets/Wine+Quality
 # https://archive.ics.uci.edu/ml/datasets/abalone
+# https://archive.ics.uci.edu/ml/datasets/Auto+MPG
 
 #########################################################
 # Uncomment the following to install packages
@@ -20,10 +21,6 @@
 
 # Load the abalone data from file
 df = read.csv("datasets/abalone.csv", header = TRUE)
-
-# Quick introduction to data.frames
-# Examine the first several rows of data
-head(df)
 
 ## Frequency Distributions
 # Use the table function
