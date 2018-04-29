@@ -58,6 +58,16 @@ mean(subset2$mpg)
 
 # Whoa, more horsepower tends to have worse mileage!
 
+# We can make a new column in a dataframe by multiplying two columns existing columns
+df$new_col = df$cylinders * df$displacement
+# or this
+df$new_col2 = df$displacement/5
+# or this
+df$new_col3 = df$cylinders * mean(df$displacement)
+
+# let's take a look
+head(df)
+
 ################ Functions ###################
 # You will not need to do this but one can write their own 
 # functions to process data in R. 
@@ -67,7 +77,10 @@ mean(subset2$mpg)
 # in a variable for use later. 
 
 compute_col_means = function (data) {
+  # Find all the numeric columns
   numerics = unlist(lapply(data, is.numeric))
+
+  # Output the mean of the numeric columns
   return(colMeans(data[, numerics]))
 }
 
