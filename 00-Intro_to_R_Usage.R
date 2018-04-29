@@ -58,14 +58,29 @@ mean(subset2$mpg)
 
 # Whoa, more horsepower tends to have worse mileage!
 
-################ Function ###################
+################ Functions ###################
 # You will not need to do this but one can write their own 
 # functions to process data in R. 
+# This does demonstrate how all functions work in R. 
+# All functions take a set of inputs called "arguments",
+# do something, and return a response. We can store that response
+# in a variable for use later. 
 
 compute_col_means = function (data) {
   numerics = unlist(lapply(data, is.numeric))
   return(colMeans(data[, numerics]))
 }
 
-compute_col_means(df)
+# We've been doing this already in the document but
+# here we will assign the col_means name to the output
+# of the compute_col_means function.
+col_means = compute_col_means(df)
 
+col_means
+# Notice that the values have names. We can use these names to access the values on command. 
+
+############### Looping ########################
+# Loop through all the values and divide them by sqrt(2)
+for (col_name in names(col_means)) {
+    print(col_means[col_name]/sqrt(2))
+}

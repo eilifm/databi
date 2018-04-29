@@ -7,7 +7,7 @@ Intro Data Analytics & Bus Intelligence at the Rochester Institute of Technology
 # Using this Code Repository
 ## Requirements
 R/R Studio installed and around version 3.4.4. Exact compatibility is unknown
-but the author suspects no issues will arise. 
+but the author suspects no issues will arise.
 
 ## Setup
   1. Download as a zip file [here](https://github.com/eilifm/databi/archive/master.zip)
